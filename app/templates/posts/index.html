@@ -8,8 +8,11 @@
 
 	<h1 class="ui header">{{ title }}</h1>
 
-	{% if current_user.is_authenticated %}
-	  	<h2 class="ui header">Hi {{ current_user.name }}!</h2>
-	{% endif %}
-
+	<ul>
+	{% for post in posts %}
+		<li on-click>
+				<a class="item" href="{{ '/posts/' + post.id|string }}">{{ post.title }}</a>
+		</li>
+	{% endfor %}
+</ul>
 {% endblock %}

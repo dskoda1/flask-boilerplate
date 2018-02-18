@@ -24,8 +24,11 @@
 				<!-- Navbar -->
 				<div class="ui attached inverted menu">
 				  	{{ m.nav_link('index', 'Home') }}
-				  	{{ m.nav_link('map', 'Map') }}
-					{{ m.nav_link('contact', 'Contact') }}
+					{{ m.nav_link('posts', 'Posts') }}
+					{{ m.render_menu_items('Posts', [
+							('posts', 'Explore'),
+							('add_post', 'New')
+						])}}
 				 	<div class="right menu">
 				 		<!-- User is logged in -->
 				      	{% if current_user.is_authenticated %}

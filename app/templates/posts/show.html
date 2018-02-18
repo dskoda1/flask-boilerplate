@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+	<h1 class="ui header">{{ post.title }}</h1>
+
+    <body>
+        {{post.body}}
+    </body>
+</ul>
+{% endblock %}

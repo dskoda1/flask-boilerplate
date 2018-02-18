@@ -13,6 +13,29 @@
 	{% endif %}
 {% endmacro %}
 
+{% macro render_menu_items(name, endpoints) %}
+
+	<div class="ui dropdown item">
+		{{ name }}
+		<i class="dropdown icon"></i>
+		<div class="menu">
+				<div class="item">Explore</div>
+				<div class="item">New</div>
+				<!-- {% for endpoint, name in endpoints %}
+			<div class="item">
+				<a class="item {% if request.endpoint == endpoint %}active teal item{% endif %}" href="{{ url_for(endpoint) }}">
+					{{ name | safe }}
+				</a>
+			</div>
+			{% endfor %} -->
+		</div>
+
+	  </div>
+    	<script type="text/javascript">
+		$('.ui.dropdown').dropdown();
+	</script>
+{% endmacro %}
+
 <!-- Render a WTForm form's field (with it's possible associated errors) from a WTForms form -->
 {% macro render_field(field) %}
 	<div class="field">

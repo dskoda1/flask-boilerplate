@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+	<h1 class="ui header">{{ title }}</h1>
+	{% if current_user.is_authenticated %}
+		<h3 class="ui header">Create New Post</h3>
+		<form class="ui form" action="/posts" method="post">
+			{{ m.render_field(form.title) }}
+			{{ m.render_field(form.body) }}
+			{{ form.csrf_token }}
+			<button class="ui primary button" type="submit">Submit</button>
+			
+		</form>
+
+	  	<h2 class="ui header">Your Posts</h2>
+	{% endif %}
+{% endblock %}
